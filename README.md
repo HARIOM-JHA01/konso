@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+### **Konso**
 
-## Getting Started
+> A minimalist productivity app combining a Calendar and To-Do list with Vim-style modes and full keyboard navigation. Built with Next.js App Router, MongoDB, Zustand, TailwindCSS, and pnpm. Designed for users who value focus, control, and clean UI.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 🛠️ **Tech Stack**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-   **Next.js App Router** – Frontend + API
+-   **TailwindCSS** – Styling
+-   **Zustand** – State Management
+-   **MongoDB + Mongoose** – Database
+-   **pnpm** – Package Management
+-   **Hotkeys / Vim-style Modes** – Custom Logic
+-   **Keyboard-Only Navigation** – Accessibility & UX
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🪜 Development Phases
 
-## Learn More
+### 🔹 Phase 1: Base Setup & UI Layout
 
-To learn more about Next.js, take a look at the following resources:
+-   [x] Initialize Next.js App with App Router (✅ done)
+-   [x] TailwindCSS, Zustand, Mongoose, MongoDB setup
+-   [ ] Build layout:
+    -   Tabbed interface: Calendar | To-Do | Both
+    -   Zen mode toggle
+    -   Placeholder UIs for calendar and todo list
+-   [ ] Add keyboard shortcuts: Tab navigation (1/2/3), toggle zen mode (Z)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🔹 Phase 2: To-Do List System
 
-## Deploy on Vercel
+-   [ ] Create To-Do model (Mongoose)
+-   [ ] Create API routes: `GET`, `POST`, `PUT`, `DELETE` (CRUD)
+-   [ ] Build interactive To-Do component with add/edit/remove
+-   [ ] Sync to MongoDB, Zustand for client-side state
+-   [ ] Add keyboard shortcuts for creating/editing tasks
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 🔹 Phase 3: Calendar System
+
+-   [ ] Create CalendarEvent model (Mongoose)
+-   [ ] API routes: `GET`, `POST`, `DELETE` for events
+-   [ ] Minimal calendar UI (monthly/weekly view)
+-   [ ] Drag/drop or modal to create events (basic)
+-   [ ] Keyboard nav for changing date/view (← ↑ ↓ → / W A S D)
+
+---
+
+### 🔹 Phase 4: Modal Editor Modes (Vim-style)
+
+-   [ ] Define three modes:
+    -   **Normal** – Navigation
+    -   **Insert** – Typing / Editing
+    -   **Command** – Shortcuts / Commands
+-   [ ] Display current mode on screen
+-   [ ] Toggle modes using `i`, `esc`, `:` keys
+-   [ ] Prevent mouse usage (optional zen)
+
+---
+
+### 🔹 Phase 5: Keyboard Navigation & Zen Mode
+
+-   [ ] Use `cmdk` / `hotkeys.js` / `react-hotkeys-hook` for keybinding
+-   [ ] Tab switching via shortcuts
+-   [ ] Zen mode: hides all UI except the main panel (toggle with `Z`)
+-   [ ] Smooth transitions with Tailwind animations
+
+---
+
+### 🔹 Phase 6: Final Polish
+
+-   [ ] Mobile responsive layout (if needed)
+-   [ ] Dark mode toggle
+-   [ ] Polish design: fonts, shadows, spacing, colors
+-   [ ] Error handling + loading states
+-   [ ] Deploy on **Vercel** with MongoDB Atlas
+
+---
+
+## 🧩 Optional Future Features
+
+-   Notifications/reminders for tasks
+-   Import/export iCal events
+-   Markdown support in notes
+-   Sync across devices
+-   User accounts & auth (e.g. Clerk/Auth.js)
+
+---
